@@ -21,7 +21,6 @@ def get_balance(account_id: str):
 
 @router.post("/event")
 def post_event(event: Event):
-    """Processa eventos de depósito, saque e transferência."""
     response = account.process_event(event)
     if response is None:
         return Response("0", status_code=404)
